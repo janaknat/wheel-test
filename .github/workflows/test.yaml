@@ -18,6 +18,6 @@ jobs:
         with:
            python-version: ${{ matrix.python }}
       - run: docker run --rm --privileged aptman/qus -s -- -p aarch64
-      - run: docker run --rm -t arm64v8/ubuntu uname -m
+      - run: docker run --rm -t arm64v8/ubuntu `pwd`:/io /io/test.sh
       - run: pip install tox
       - run: tox -e ${{ matrix.tox }}
