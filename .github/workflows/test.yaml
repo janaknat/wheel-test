@@ -8,9 +8,10 @@ jobs:
   tests:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
-    matrix:
-      include:
-        - {name: Linux, ppython: '3.8', os: ubuntu-latest}
+    stratergy:
+      matrix:
+        include:
+          - {name: Linux, ppython: '3.8', os: ubuntu-latest}
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-python@v2
