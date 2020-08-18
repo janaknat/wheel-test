@@ -8,7 +8,7 @@ jobs:
   tests:
     name: ${{ matrix.name }}
     runs-on: ${{ matrix.os }}
-    stratergy:
+    strategy:
       matrix:
         include:
           - {name: Linux, ppython: '3.8', os: ubuntu-latest}
