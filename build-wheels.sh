@@ -5,7 +5,8 @@ cd /io/
 rm -rf /io/wheelhouse
 mkdir /io/wheelhouse
 yum update -y
-/opt/python/cp39-cp39/bin/python3.9 /io/setup.py bdist_wheel
+#/opt/python/cp39-cp39/bin/python3.9 /io/setup.py bdist_wheel
+/opt/python/cp39-cp39/bin/pip3.9 install wheel
 cp /io/dist/*.whl /io/
 for whl in /io/*.whl; do
 	if [ `uname -m` = 'aarch64' ]; then
