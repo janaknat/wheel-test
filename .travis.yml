@@ -7,7 +7,7 @@ matrix:
     - os: linux
       env:
        - DOCKER_IMAGE=quay.io/pypa/manylinux2014_x86_64
-       - PLAT=x86_64
+       - PLAT=manylinux2014_x86_64
     - os: linux
       arch: arm64
       env:
