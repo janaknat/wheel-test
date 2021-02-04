@@ -1,14 +1,14 @@
 version: 2.1
 jobs:
-  build:
-    docker:
-      - image: alpine:3.7
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD
+  build-medium:
+    machine:
+      image: ubuntu-2004:202101-01
+    resource: arm.medium 
     steps:
-      - run:
-          name: The First step
-          command: |
-            echo 'Hello World!'
-            echo 'This is the delivery pipeline'
+      - run: uname -a
+      - run: echo "Hello Arm!"
+
+workflows:
+  build:
+     jobs:
+       - build-medium
