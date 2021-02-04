@@ -7,8 +7,3 @@ jobs:
     steps:
       - run: uname -a
       - run: echo "Hello Arm!"
-
-workflows:
-  build:
-     jobs:
-       - build-medium
