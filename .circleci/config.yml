@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build-medium:
+  build:
     machine:
       image: ubuntu-2004:202101-01
     resource: arm.medium 
