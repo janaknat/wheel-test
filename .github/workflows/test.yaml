@@ -38,5 +38,5 @@ jobs:
 
       - name: Copy wheel to host
         run: |
-          docker run -it quay.io/manylinux2014_aarch64 cp `pip cache list --format=abspath` /root
+          docker exec -i quay.io/manylinux2014_aarch64 cp `pip cache list --format=abspath` /root
           docker cp quay.io/manylinux2014_aarch64:/root/*.whl .
