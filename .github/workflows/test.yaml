@@ -31,3 +31,10 @@ jobs:
           python -m cibuildwheel --output-dir dist
         env:
           CIBUILDWHEEL_BUILD_VERBOSITY: 3
+          CIBW_BUILD: "cp37-*"
+          CIBW_BEFORE_BUILD: pip install numpy==1.16
+
+      - name: Copy wheel to host
+        run: |
+          docker -it quay.io/manylinux2014_aarch64 cp `pip cache list --format=abspath` /root
+          docker cp quay.io/manylinux2014_aarch64:/root/*.whl .
