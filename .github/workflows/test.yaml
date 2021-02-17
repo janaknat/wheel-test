@@ -35,7 +35,7 @@ jobs:
           python -m pip install cibuildwheel
 
       - name: Build markupsafe for aarch64
-        if: steps.markupsafe-cache.outputs.cache-hit != 'true'
+        if: matrix.os == 'ubuntu-latest' && steps.markupsafe-cache.outputs.cache-hit != 'true'
         run: |
           wget https://files.pythonhosted.org/packages/ac/7e/1b4c2e05809a4414ebce0892fe1e32c14ace86ca7d50c70f00979ca9b3a3/MarkupSafe-1.1.0.tar.gz
           tar -xvzf MarkupSafe-1.1.0.tar.gz
